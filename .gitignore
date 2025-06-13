@@ -6,7 +6,7 @@
 
 # Ignora diretórios comuns de build
 target/
-bin/
+bin/git
 
 # Ignora logs e arquivos temporários
 *.log

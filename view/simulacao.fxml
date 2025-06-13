@@ -5,7 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: dddddd;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SimuladorController">
    <children>
@@ -44,7 +44,7 @@
             <Image url="@../assets/student_idle.gif" />
          </image>
       </ImageView>
-      <ImageView fx:id="student2" fitHeight="128.0" fitWidth="180.0" layoutX="220.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="student2" fitHeight="128.0" fitWidth="180.0" layoutX="223.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/student_idle.gif" />
          </image>
@@ -79,26 +79,26 @@
             <Image url="@../assets/leaveButton.png" />
          </image>
       </ImageView>
-      <Slider fx:id="procurarSlider1" layoutX="150.0" layoutY="41.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="lerSlider1" layoutX="169.0" layoutY="41.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="procurarSlider2" layoutX="325.0" layoutY="41.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="lerSlider2" layoutX="344.0" layoutY="41.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="procurarSlider3" layoutX="511.0" layoutY="41.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="lerSlider3" layoutX="530.0" layoutY="41.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="procurarSlider4" layoutX="679.0" layoutY="41.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="lerSlider4" layoutX="698.0" layoutY="41.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="procurarSlider5" layoutX="862.0" layoutY="41.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" orientation="VERTICAL" snapToTicks="true" value="2.0" visible="false" />
-      <Slider fx:id="lerSlider5" layoutX="882.0" layoutY="41.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="pesquisarSlider1" layoutX="153.0" layoutY="560.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="publicarSlider1" layoutX="172.0" layoutY="560.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="pesquisarSlider2" layoutX="308.0" layoutY="560.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="publicarSlider2" layoutX="327.0" layoutY="560.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="pesquisarSlider3" layoutX="458.0" layoutY="560.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="publicarSlider3" layoutX="477.0" layoutY="560.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="pesquisarSlider4" layoutX="608.0" layoutY="560.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="publicarSlider4" layoutX="627.0" layoutY="560.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="pesquisarSlider5" layoutX="758.0" layoutY="560.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
-      <Slider fx:id="publicarSlider5" layoutX="777.0" layoutY="560.0" max="10.0" orientation="VERTICAL" value="2.0" visible="false" />
+      <Slider fx:id="procurarSlider1" layoutX="38.0" layoutY="88.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="lerSlider1" layoutX="58.0" layoutY="88.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="procurarSlider2" layoutX="216.0" layoutY="88.0" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="lerSlider2" layoutX="236.0" layoutY="88.0" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="procurarSlider3" layoutX="394.0" layoutY="88.0" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="lerSlider3" layoutX="414.0" layoutY="88.0" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="procurarSlider4" layoutX="571.0" layoutY="88.0" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="lerSlider4" layoutX="591.0" layoutY="88.0" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="procurarSlider5" layoutX="748.0" layoutY="88.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" snapToTicks="true" value="5.0" />
+      <Slider fx:id="lerSlider5" layoutX="768.0" layoutY="88.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="pesquisarSlider1" layoutX="40.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="publicarSlider1" layoutX="60.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="pesquisarSlider2" layoutX="220.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="publicarSlider2" layoutX="243.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="pesquisarSlider3" layoutX="401.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="publicarSlider3" layoutX="421.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="pesquisarSlider4" layoutX="578.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="publicarSlider4" layoutX="598.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="pesquisarSlider5" layoutX="755.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
+      <Slider fx:id="publicarSlider5" layoutX="775.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
       <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="390.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/dialog_box-removebg-preview.png" />
@@ -124,11 +124,26 @@
             <Image url="@../assets/dialog_box-removebg-preview.png" />
          </image>
       </ImageView>
-      <Label fx:id="leitor3Status" alignment="CENTER" layoutX="397.0" layoutY="25.0" prefWidth="128.0" text="3" />
-      <Label fx:id="leitor1Status" alignment="CENTER" layoutX="40.0" layoutY="25.0" prefWidth="128.0" text="1" />
-      <Label fx:id="leitor2Status" alignment="CENTER" layoutX="220.0" layoutY="25.0" prefWidth="128.0" text="2" />
-      <Label fx:id="leitor5Status" alignment="CENTER" layoutX="755.0" layoutY="25.0" prefWidth="128.0" text="5" />
-      <Label fx:id="leitor4Status" alignment="CENTER" layoutX="577.0" layoutY="25.0" prefWidth="128.0" text="4" />
+      <Label fx:id="leitor3Status" alignment="CENTER" layoutX="397.0" layoutY="25.0" prefWidth="128.0" text="3">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="leitor1Status" alignment="CENTER" layoutX="40.0" layoutY="25.0" prefWidth="128.0" text="1">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="leitor2Status" alignment="CENTER" layoutX="220.0" layoutY="25.0" prefWidth="128.0" text="2">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="leitor5Status" alignment="CENTER" layoutX="755.0" layoutY="25.0" prefWidth="128.0" text="5" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="leitor4Status" alignment="CENTER" layoutX="577.0" layoutY="25.0" prefWidth="128.0" text="4">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
       <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="31.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/dialog_box-removebg-preview.png" />
@@ -154,11 +169,80 @@
             <Image url="@../assets/dialog_box-removebg-preview.png" />
          </image>
       </ImageView>
-      <Label fx:id="escritor5Status" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="755.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="5" textAlignment="CENTER" textOverrun="CLIP" />
-      <Label fx:id="escritor3Status" alignment="CENTER" layoutX="400.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="3" textAlignment="CENTER" />
-      <Label fx:id="escritor4Status" alignment="CENTER" layoutX="577.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="4" textAlignment="CENTER" />
-      <Label fx:id="escritor2Status" alignment="CENTER" layoutX="223.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="2" textAlignment="CENTER" />
-      <Label fx:id="escritor1Status" alignment="CENTER" layoutX="38.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="1" textAlignment="CENTER" />
-      <Text layoutX="941.0" layoutY="115.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="RESET" />
+      <Label fx:id="escritor5Status" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="755.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="5" textAlignment="CENTER" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="escritor3Status" alignment="CENTER" layoutX="400.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="3" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="escritor4Status" alignment="CENTER" layoutX="577.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="4" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="escritor2Status" alignment="CENTER" layoutX="223.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="2" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="escritor1Status" alignment="CENTER" layoutX="38.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="1" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <ImageView fx:id="escritorIcon3" fitHeight="77.0" fitWidth="77.0" layoutX="425.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/block_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="escritorIcon2" fitHeight="77.0" fitWidth="108.0" layoutX="249.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/block_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="escritorIcon4" fitHeight="84.0" fitWidth="77.0" layoutX="603.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/block_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="escritorIcon5" fitHeight="77.0" fitWidth="83.0" layoutX="781.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/block_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="leitorIcon2" fitHeight="77.0" fitWidth="77.0" layoutX="246.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/block_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="leitorIcon3" fitHeight="77.0" fitWidth="77.0" layoutX="423.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/block_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="leitorIcon1" fitHeight="77.0" fitWidth="77.0" layoutX="66.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/block_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="leitorIcon5" fitHeight="84.0" fitWidth="77.0" layoutX="781.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/block_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="leitorIcon4" fitHeight="77.0" fitWidth="77.0" layoutX="603.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/block_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="escritorIcon1" fitHeight="77.0" fitWidth="101.0" layoutX="64.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/block_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="77.0" fitWidth="44.0" layoutX="935.0" layoutY="89.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/reset_icon.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

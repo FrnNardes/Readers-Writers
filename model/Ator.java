@@ -11,16 +11,19 @@ import javafx.scene.text.TextAlignment;
 public abstract class Ator extends Thread {
   protected final int id;
   private final Label statusLabel;
+  private final ImageView iconImage;
   private final ImageView sprite;
-  private final Slider slider1;
-  private final Slider slider2;
+  protected final Slider slider1;
+  protected final Slider slider2;
 
   // Flag de controle de execucao
   protected volatile boolean executando = true;
+  protected volatile boolean pausado = false;
 
-  public Ator(int id, Label statusLabel, ImageView sprite, Slider slider1, Slider slider2) {
+  public Ator(int id, Label statusLabel, ImageView sprite, ImageView iconImage, Slider slider1, Slider slider2) {
     this.id = id;
     this.statusLabel = statusLabel;
+    this.iconImage = iconImage;
     this.sprite = sprite;
     this.slider1 = slider1;
     this.slider2 = slider2;
@@ -29,8 +32,8 @@ public abstract class Ator extends Thread {
 
   public void parar() {
     this.executando = false;
-    this.slider1.setValue(2);
-    this.slider2.setValue(2);
+    this.slider1.setValue(5);
+    this.slider2.setValue(5);
     this.interrupt(); // Interromper a thread caso ela esteja dormindo (em Thread.sleep)
   }
 
@@ -40,17 +43,35 @@ public abstract class Ator extends Thread {
    */
   protected void setStatus(String mensagem, Image image) {
     Platform.runLater(() -> {
+      iconImage.setVisible(false);
+      statusLabel.setVisible(true);
       statusLabel.setText(mensagem);
       sprite.setImage(image);
       statusLabel.setTextAlignment(TextAlignment.CENTER);
     });
   }
 
-  public ImageView getSprite(){
+  protected void setStatus(Image image) {
+    Platform.runLater(() -> {
+      iconImage.setVisible(true);;
+      sprite.setImage(image);
+      statusLabel.setVisible(false);
+    });
+  }
+
+  protected ImageView getSprite(){
     return sprite;
   }
 
+  public void setPause(){
+    if(pausado == false){
+      pausado = true;
+    } else {
+      pausado = false;
+    }
+  }
+
   // Sobrescrevemos o método run para adicionar a verificação da flag
-    @Override
-    public abstract void run();
+  @Override
+  public abstract void run();
 }
