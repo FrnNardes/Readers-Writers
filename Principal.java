@@ -1,8 +1,8 @@
 /* ***************************************************************
 * Autor............: Fernando Nardes Ferreira Neto
 * Matricula........: 202410403
-* Inicio...........: 06/05/2025
-* Ultima alteracao.: 06/05/2025
+* Inicio...........: 06/06/2025
+* Ultima alteracao.: 06/06/2025
 * Nome.............: Principal.java
 * Funcao...........: Classe principal que inicializa a aplicacao com as 
 *                    bibliotecas necessarias para a execucao do JavaFX. 

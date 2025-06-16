@@ -15,25 +15,24 @@ public abstract class Ator extends Thread {
   private final ImageView sprite;
   protected final Slider slider1;
   protected final Slider slider2;
-  protected final ImageView pauseButton;
 
   // Flag de controle de execucao
   protected volatile boolean executando = true;
   protected volatile boolean pausado = false;
 
-  public Ator(int id, Label statusLabel, ImageView sprite, ImageView iconImage, Slider slider1, Slider slider2, ImageView pauseButton) {
+  public Ator(int id, Label statusLabel, ImageView sprite, ImageView iconImage, Slider slider1, Slider slider2) {
     this.id = id;
     this.statusLabel = statusLabel;
     this.iconImage = iconImage;
     this.sprite = sprite;
     this.slider1 = slider1;
     this.slider2 = slider2;
-    this.pauseButton = pauseButton;
     this.setDaemon(true); // Garante que a thread não impeça o programa de fechar
   }
 
   public void parar() {
     this.executando = false;
+    this.pausado = false;
     this.slider1.setValue(5);
     this.slider2.setValue(5);
     this.interrupt(); // Interromper a thread caso ela esteja dormindo (em Thread.sleep)
@@ -65,12 +64,53 @@ public abstract class Ator extends Thread {
     return sprite;
   }
 
-  public void setPause(){
-    if(pausado == false){
-      pausado = true;
-    } else {
-      pausado = false;
+  // O método de verificação agora implementa o busy-wait.
+  protected void verificarPausa(Image image) {
+    while (isPaused()) {
+      try {
+          Thread.sleep(50); // Um pequeno sleep para "aliviar" o processador.
+          setStatus("PAUSADO", image);
+          if (!executando) {
+            break;
+          }
+      } catch (InterruptedException e) {
+          // A interrupção pode quebrar o loop de pausa se o reset for chamado.
+          this.executando = false; 
+      }
     }
+  }
+
+  protected void slicedSleep(long duracaoTotalMs, Image image, String status, Image imageStatus) throws InterruptedException {
+    long tempoDormido = 0; // Acumulador de tempo efetivamente dormido/trabalhado
+    long FATIA_DE_TEMPO = 50; // Verificamos a pausa a cada 50ms
+
+    while (executando && tempoDormido < duracaoTotalMs) {
+        // 1. Verifica se precisa pausar ANTES de fazer qualquer trabalho.
+        // Se pausado, a thread ficará presa aqui dentro até ser retomada.
+        verificarPausa(image);
+        
+        if(!isPaused()){
+          setStatus(status, imageStatus);
+          if(status.equals("")){
+            setStatus(imageStatus);
+          }
+        }
+
+        // 2. Trabalha/Dorme por um pequeno pedaço de tempo.
+        Thread.sleep(FATIA_DE_TEMPO);
+
+        // 3. Só então, adiciona o tempo trabalhado ao acumulador.
+        // Se a thread estava pausada, este código não é alcançado e o tempo não é somado.
+        tempoDormido += FATIA_DE_TEMPO;
+    }
+  }
+
+  public void alternarPausa() {
+    this.pausado = !this.pausado;
+  }
+
+  public boolean isPaused(){
+    return pausado;
   }
 
   // Sobrescrevemos o método run para adicionar a verificação da flag

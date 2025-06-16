@@ -4,14 +4,12 @@ import util.Contador;
 import model.Leitor;
 import model.Escritor;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.StackPane;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,6 +34,9 @@ public class SimuladorController {
   @FXML private Slider publicarSlider1, publicarSlider2, publicarSlider3, publicarSlider4, publicarSlider5;
   @FXML private ImageView botaoPause1, botaoPause2, botaoPause3, botaoPause4, botaoPause5, botaoPause6, botaoPause7, botaoPause8, botaoPause9, botaoPause10;
 
+  private final Image pause_button = new Image(getClass().getResourceAsStream("/assets/pause_button.png")); // Pega a imagem do botao cinza
+  private final Image play_button = new Image(getClass().getResourceAsStream("/assets/play_button.png")); // Pega a imagem do botao cinza
+
   // Campos para gerenciar a simulação
   private List<Leitor> leitoresAtivos = new ArrayList<>();
   private List<Escritor> escritoresAtivos = new ArrayList<>();
@@ -47,36 +48,73 @@ public class SimuladorController {
     Contador rc = new Contador();
 
     // 2. Cria as instâncias dos Atores (Model)
+    // (Vou remover a passagem do botão de pausa do construtor, pois vamos configurá-lo aqui)
     List<Leitor> leitores = Arrays.asList(
-      new Leitor(1, mutex, db, rc, leitor1Status, student1, leitorIcon1, procurarSlider1, lerSlider1, botaoPause1),
-      new Leitor(2, mutex, db, rc, leitor2Status, student2, leitorIcon2, procurarSlider2, lerSlider2, botaoPause2),
-      new Leitor(3, mutex, db, rc, leitor3Status, student3, leitorIcon3, procurarSlider3, lerSlider3, botaoPause3),
-      new Leitor(4, mutex, db, rc, leitor4Status, student4, leitorIcon4, procurarSlider4, lerSlider4, botaoPause4),
-      new Leitor(5, mutex, db, rc, leitor5Status, student5, leitorIcon5, procurarSlider5, lerSlider5, botaoPause5)
+        new Leitor(1, mutex, db, rc, leitor1Status, student1, leitorIcon1, procurarSlider1, lerSlider1),
+        new Leitor(2, mutex, db, rc, leitor2Status, student2, leitorIcon2, procurarSlider2, lerSlider2),
+        new Leitor(3, mutex, db, rc, leitor3Status, student3, leitorIcon3, procurarSlider3, lerSlider3),
+        new Leitor(4, mutex, db, rc, leitor4Status, student4, leitorIcon4, procurarSlider4, lerSlider4),
+        new Leitor(5, mutex, db, rc, leitor5Status, student5, leitorIcon5, procurarSlider5, lerSlider5)
     );
 
     List<Escritor> escritores = Arrays.asList(
-      new Escritor(1, db, escritor1Status, scientist1, escritorIcon1, pesquisarSlider1, publicarSlider1, botaoPause6),
-      new Escritor(2, db, escritor2Status, scientist2, escritorIcon2, pesquisarSlider2, publicarSlider2, botaoPause7),
-      new Escritor(3, db, escritor3Status, scientist3, escritorIcon3, pesquisarSlider3, publicarSlider3, botaoPause8),
-      new Escritor(4, db, escritor4Status, scientist4, escritorIcon4, pesquisarSlider4, publicarSlider4, botaoPause9),
-      new Escritor(5, db, escritor5Status, scientist5, escritorIcon5, pesquisarSlider5, publicarSlider5, botaoPause10)
+        new Escritor(1, db, escritor1Status, scientist1, escritorIcon1, pesquisarSlider1, publicarSlider1),
+        new Escritor(2, db, escritor2Status, scientist2, escritorIcon2, pesquisarSlider2, publicarSlider2),
+        new Escritor(3, db, escritor3Status, scientist3, escritorIcon3, pesquisarSlider3, publicarSlider3),
+        new Escritor(4, db, escritor4Status, scientist4, escritorIcon4, pesquisarSlider4, publicarSlider4),
+        new Escritor(5, db, escritor5Status, scientist5, escritorIcon5, pesquisarSlider5, publicarSlider5)
     );
 
+    // --- A CONEXÃO DOS BOTÕES ACONTECE AQUI ---
+    
+    // Agrupa os botões em uma lista para facilitar
+    List<ImageView> botoesPausa = Arrays.asList(botaoPause1, botaoPause2, botaoPause3, botaoPause4, botaoPause5, botaoPause6, botaoPause7, botaoPause8, botaoPause9, botaoPause10);
+
+    // Conecta os 5 primeiros botões aos 5 leitores
+    for (int i = 0; i < leitores.size(); i++) {
+        final Leitor leitor = leitores.get(i); // Variável final para ser usada na lambda
+        ImageView botao = botoesPausa.get(i);
+        botao.setImage(pause_button);
+        aplicarAnimacaoBotao(botoesPausa.get(i));
+        
+        botao.setOnMouseClicked(event -> {
+            leitor.alternarPausa();
+            if(leitor.isPaused()){
+              botao.setImage(play_button);
+            } else{
+              botao.setImage(pause_button);
+            }
+        });
+    }
+
+    // Conecta os 5 últimos botões aos 5 escritores
+    for (int i = 0; i < escritores.size(); i++) {
+      final Escritor escritor = escritores.get(i);
+      ImageView botao = botoesPausa.get(i + 5); // Começa do índice 5 da lista de botões
+      botao.setImage(pause_button);
+      aplicarAnimacaoBotao(botoesPausa.get(i));
+
+      botao.setOnMouseClicked(event -> {
+        escritor.alternarPausa();
+        if(escritor.isPaused()){
+          botao.setImage(play_button);
+        } else{
+          botao.setImage(pause_button);
+        }
+      });
+    }
+
+    // --- FIM DA CONEXÃO ---
+
     // 3. Salvando os leitores e escritores da execucao atual
-    for(Leitor leitor : leitores){
-      leitoresAtivos.add(leitor);
-    }
+    leitoresAtivos.addAll(leitores);
+    escritoresAtivos.addAll(escritores);
 
-    for(Escritor escritor : escritores){
-      escritoresAtivos.add(escritor);
-    }
-
-    // 4. Inicia a simulação
-    for (Leitor leitor : leitores) {
+    // 4. Iniciando simualcao
+    for(Leitor leitor : leitoresAtivos){
       leitor.start();
     }
-    for (Escritor escritor : escritores) {
+    for(Escritor escritor : escritoresAtivos){
       escritor.start();
     }
   }
@@ -88,6 +126,8 @@ public class SimuladorController {
     for(Escritor escritor : escritoresAtivos){
       escritor.parar();
     }
+    leitoresAtivos.clear();
+    escritoresAtivos.clear();
   }
 
   public void aplicarAnimacaoBotao(ImageView... ImageViews) {
@@ -114,11 +154,6 @@ public class SimuladorController {
   private void reset(){
     pararSimulacao();
     iniciarSimulacao();
-  }
-
-  @FXML
-  public void pausarLeitor(){
-    
   }
 
   @FXML
