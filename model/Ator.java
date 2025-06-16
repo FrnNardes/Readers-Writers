@@ -15,18 +15,20 @@ public abstract class Ator extends Thread {
   private final ImageView sprite;
   protected final Slider slider1;
   protected final Slider slider2;
+  protected final ImageView pauseButton;
 
   // Flag de controle de execucao
   protected volatile boolean executando = true;
   protected volatile boolean pausado = false;
 
-  public Ator(int id, Label statusLabel, ImageView sprite, ImageView iconImage, Slider slider1, Slider slider2) {
+  public Ator(int id, Label statusLabel, ImageView sprite, ImageView iconImage, Slider slider1, Slider slider2, ImageView pauseButton) {
     this.id = id;
     this.statusLabel = statusLabel;
     this.iconImage = iconImage;
     this.sprite = sprite;
     this.slider1 = slider1;
     this.slider2 = slider2;
+    this.pauseButton = pauseButton;
     this.setDaemon(true); // Garante que a thread não impeça o programa de fechar
   }
 

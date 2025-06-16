@@ -14,8 +14,8 @@ public class Escritor extends Ator {
   private final Image scientist_searching = new Image(getClass().getResourceAsStream("/assets/scientist_searching.gif")); // Pega a animacao do cientista pesquisando
   private final Image scientist_taking_notes = new Image(getClass().getResourceAsStream("/assets/scientist_taking_notes.gif")); // Pega a animacao do cientista anotando
 
-  public Escritor(int id, Semaphore db, Label statusLabel, ImageView sprite, ImageView iconImage, Slider pesquisarSlider, Slider publicarSlider) {
-    super(id, statusLabel, sprite, iconImage, pesquisarSlider, publicarSlider);
+  public Escritor(int id, Semaphore db, Label statusLabel, ImageView sprite, ImageView iconImage, Slider pesquisarSlider, Slider publicarSlider, ImageView pauseButton) {
+    super(id, statusLabel, sprite, iconImage, pesquisarSlider, publicarSlider, pauseButton);
     this.db = db;
   }
 

@@ -12,14 +12,15 @@ public class Leitor extends Ator {
   private final Semaphore mutex;
   private final Semaphore db;
   private final Contador rc;
+  private boolean isPaused = false;
 
   private final Image student_static = new Image(getClass().getResourceAsStream("/assets/student_static.png")); // Pega a imagem do botao verde
   private final Image student_thinking = new Image(getClass().getResourceAsStream("/assets/student_thinking.gif")); // Pega a imagem do botao verde
   private final Image student_idle = new Image(getClass().getResourceAsStream("/assets/student_idle.gif")); // Pega a imagem do botao cinza
   private final Image student_reading = new Image(getClass().getResourceAsStream("/assets/student_reading.gif")); // Pega a imagem do botao cinza
 
-  public Leitor(int id, Semaphore mutex, Semaphore db, Contador rc, Label statusLabel, ImageView sprite, ImageView iconImage, Slider procurarSlider, Slider lerSlider) {
-    super(id, statusLabel, sprite, iconImage, procurarSlider, lerSlider);
+  public Leitor(int id, Semaphore mutex, Semaphore db, Contador rc, Label statusLabel, ImageView sprite, ImageView iconImage, Slider procurarSlider, Slider lerSlider, ImageView pauseButton) {
+    super(id, statusLabel, sprite, iconImage, procurarSlider, lerSlider, pauseButton);
     this.mutex = mutex;
     this.db = db;
     this.rc = rc;
@@ -55,6 +56,14 @@ public class Leitor extends Ator {
       }
   } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
+  }
+}
+
+public void pause(){
+  if(isPaused == false){
+    isPaused = true;
+  } else {
+    isPaused = false;
   }
 }
 }

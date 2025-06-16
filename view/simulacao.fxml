@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: dddddd;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SimuladorController">
    <children>
-      <ImageView fitHeight="738.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView blendMode="SRC_ATOP" fitHeight="805.0" fitWidth="1127.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/background.png" />
+            <Image url="@../assets/background2.png" />
          </image>
       </ImageView>
       <ImageView fx:id="scientist2" fitHeight="128.0" fitWidth="128.0" layoutX="223.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true">
@@ -39,31 +42,6 @@
             <Image url="@../assets/scientist_idle.gif" />
          </image>
       </ImageView>
-      <ImageView fx:id="student1" fitHeight="128.0" fitWidth="128.0" layoutX="40.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/student_idle.gif" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="student2" fitHeight="128.0" fitWidth="180.0" layoutX="223.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/student_idle.gif" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="student3" fitHeight="128.0" fitWidth="128.0" layoutX="399.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/student_idle.gif" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="student4" fitHeight="128.0" fitWidth="128.0" layoutX="578.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/student_idle.gif" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="student5" fitHeight="128.0" fitWidth="128.0" layoutX="755.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/student_idle.gif" />
-         </image>
-      </ImageView>
       <ImageView fx:id="botaoReset" fitHeight="54.0" fitWidth="178.0" layoutX="930.0" layoutY="84.0" onMouseClicked="#reset" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/button_square.png" />
@@ -79,16 +57,6 @@
             <Image url="@../assets/leaveButton.png" />
          </image>
       </ImageView>
-      <Slider fx:id="procurarSlider1" layoutX="38.0" layoutY="88.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
-      <Slider fx:id="lerSlider1" layoutX="58.0" layoutY="88.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
-      <Slider fx:id="procurarSlider2" layoutX="216.0" layoutY="88.0" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
-      <Slider fx:id="lerSlider2" layoutX="236.0" layoutY="88.0" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
-      <Slider fx:id="procurarSlider3" layoutX="394.0" layoutY="88.0" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
-      <Slider fx:id="lerSlider3" layoutX="414.0" layoutY="88.0" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
-      <Slider fx:id="procurarSlider4" layoutX="571.0" layoutY="88.0" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
-      <Slider fx:id="lerSlider4" layoutX="591.0" layoutY="88.0" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
-      <Slider fx:id="procurarSlider5" layoutX="748.0" layoutY="88.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" snapToTicks="true" value="5.0" />
-      <Slider fx:id="lerSlider5" layoutX="768.0" layoutY="88.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
       <Slider fx:id="pesquisarSlider1" layoutX="40.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
       <Slider fx:id="publicarSlider1" layoutX="60.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
       <Slider fx:id="pesquisarSlider2" layoutX="220.0" layoutY="586.0" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" />
@@ -244,5 +212,159 @@
             <Image url="@../assets/reset_icon.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="botaoPause6" fitHeight="61.0" fitWidth="63.0" layoutX="138.0" layoutY="602.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/play_button.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="botaoPause10" fitHeight="61.0" fitWidth="63.0" layoutX="853.0" layoutY="602.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/play_button.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="botaoPause9" fitHeight="61.0" fitWidth="63.0" layoutX="676.0" layoutY="602.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/play_button.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="botaoPause8" fitHeight="61.0" fitWidth="63.0" layoutX="499.0" layoutY="602.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/play_button.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="botaoPause7" fitHeight="61.0" fitWidth="63.0" layoutX="321.0" layoutY="602.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/play_button.png" />
+         </image>
+      </ImageView>
+      <FlowPane fx:id="studentGrid" layoutX="10.0" layoutY="52.0" prefHeight="139.0" prefWidth="908.0">
+         <children>
+            <StackPane prefHeight="150.0" prefWidth="180.0">
+               <children>
+                  <ImageView fx:id="student5" fitHeight="128.0" fitWidth="128.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/student_idle.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="botaoPause1" fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+                     <image>
+                        <Image url="@../assets/play_button.png" />
+                     </image>
+                  </ImageView>
+                  <Slider fx:id="lerSlider5" majorTickUnit="2.0" max="10.0" minorTickCount="1" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
+                     </StackPane.margin>
+                  </Slider>
+                  <Slider fx:id="procurarSlider5" majorTickUnit="2.0" max="10.0" minorTickCount="1" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" snapToTicks="true" value="5.0" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </StackPane.margin>
+                  </Slider>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="180.0">
+               <children>
+                  <ImageView fx:id="student4" fitHeight="128.0" fitWidth="128.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/student_idle.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="botaoPause2" fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+                     <image>
+                        <Image url="@../assets/play_button.png" />
+                     </image>
+                  </ImageView>
+                  <Slider fx:id="procurarSlider4" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </StackPane.margin>
+                  </Slider>
+                  <Slider fx:id="lerSlider4" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
+                     </StackPane.margin>
+                  </Slider>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="180.0">
+               <children>
+                  <ImageView fx:id="student2" fitHeight="128.0" fitWidth="180.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/student_idle.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="botaoPause3" fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+                     <image>
+                        <Image url="@../assets/play_button.png" />
+                     </image>
+                  </ImageView>
+                  <Slider fx:id="procurarSlider2" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
+                     </StackPane.margin>
+                  </Slider>
+                  <Slider fx:id="lerSlider2" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </StackPane.margin>
+                  </Slider>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="180.0">
+               <children>
+                  <ImageView fx:id="botaoPause4" fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+                     <image>
+                        <Image url="@../assets/play_button.png" />
+                     </image>
+                  </ImageView>
+                  <Slider fx:id="lerSlider1" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="0.0" value="5.0" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
+                     </StackPane.margin>
+                  </Slider>
+                  <Slider fx:id="procurarSlider1" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="134.0" prefWidth="14.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </StackPane.margin>
+                  </Slider>
+                  <ImageView fx:id="student1" fitHeight="128.0" fitWidth="128.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/student_idle.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="180.0">
+               <children>
+                  <ImageView fx:id="botaoPause5" fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+                     <image>
+                        <Image url="@../assets/play_button.png" />
+                     </image>
+                  </ImageView>
+                  <Slider fx:id="procurarSlider3" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </StackPane.margin>
+                  </Slider>
+                  <Slider fx:id="lerSlider3" max="10.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
+                     </StackPane.margin>
+                  </Slider>
+                  <ImageView fx:id="student3" fitHeight="128.0" fitWidth="128.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/student_idle.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </children>
+      </FlowPane>
+      <FlowPane layoutX="18.0" layoutY="275.0" prefHeight="200.0" prefWidth="799.0">
+         <children>
+            <StackPane prefHeight="150.0" prefWidth="200.0" />
+         </children>
+      </FlowPane>
    </children>
 </AnchorPane>

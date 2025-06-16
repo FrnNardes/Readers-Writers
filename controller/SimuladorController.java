@@ -4,10 +4,14 @@ import util.Contador;
 import model.Leitor;
 import model.Escritor;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.effect.ColorAdjust;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.StackPane;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,6 +19,8 @@ import java.util.List;
 import java.util.concurrent.Semaphore;
 
 public class SimuladorController {
+
+  @FXML private FlowPane studentGrid;
 
   // Injeção dos componentes da View
   @FXML private Label leitor1Status, leitor2Status, leitor3Status, leitor4Status, leitor5Status;
@@ -28,6 +34,7 @@ public class SimuladorController {
   @FXML private Slider lerSlider1, lerSlider2, lerSlider3, lerSlider4, lerSlider5;
   @FXML private Slider pesquisarSlider1, pesquisarSlider2, pesquisarSlider3, pesquisarSlider4, pesquisarSlider5;
   @FXML private Slider publicarSlider1, publicarSlider2, publicarSlider3, publicarSlider4, publicarSlider5;
+  @FXML private ImageView botaoPause1, botaoPause2, botaoPause3, botaoPause4, botaoPause5, botaoPause6, botaoPause7, botaoPause8, botaoPause9, botaoPause10;
 
   // Campos para gerenciar a simulação
   private List<Leitor> leitoresAtivos = new ArrayList<>();
@@ -41,19 +48,19 @@ public class SimuladorController {
 
     // 2. Cria as instâncias dos Atores (Model)
     List<Leitor> leitores = Arrays.asList(
-      new Leitor(1, mutex, db, rc, leitor1Status, student1, leitorIcon1, procurarSlider1, lerSlider1),
-      new Leitor(2, mutex, db, rc, leitor2Status, student2, leitorIcon2, procurarSlider2, lerSlider2),
-      new Leitor(3, mutex, db, rc, leitor3Status, student3, leitorIcon3, procurarSlider3, lerSlider3),
-      new Leitor(4, mutex, db, rc, leitor4Status, student4, leitorIcon4, procurarSlider4, lerSlider4),
-      new Leitor(5, mutex, db, rc, leitor5Status, student5, leitorIcon5, procurarSlider5, lerSlider5)
+      new Leitor(1, mutex, db, rc, leitor1Status, student1, leitorIcon1, procurarSlider1, lerSlider1, botaoPause1),
+      new Leitor(2, mutex, db, rc, leitor2Status, student2, leitorIcon2, procurarSlider2, lerSlider2, botaoPause2),
+      new Leitor(3, mutex, db, rc, leitor3Status, student3, leitorIcon3, procurarSlider3, lerSlider3, botaoPause3),
+      new Leitor(4, mutex, db, rc, leitor4Status, student4, leitorIcon4, procurarSlider4, lerSlider4, botaoPause4),
+      new Leitor(5, mutex, db, rc, leitor5Status, student5, leitorIcon5, procurarSlider5, lerSlider5, botaoPause5)
     );
 
     List<Escritor> escritores = Arrays.asList(
-      new Escritor(1, db, escritor1Status, scientist1, escritorIcon1, pesquisarSlider1, publicarSlider1),
-      new Escritor(2, db, escritor2Status, scientist2, escritorIcon2, pesquisarSlider2, publicarSlider2),
-      new Escritor(3, db, escritor3Status, scientist3, escritorIcon3, pesquisarSlider3, publicarSlider3),
-      new Escritor(4, db, escritor4Status, scientist4, escritorIcon4, pesquisarSlider4, publicarSlider4),
-      new Escritor(5, db, escritor5Status, scientist5, escritorIcon5, pesquisarSlider5, publicarSlider5)
+      new Escritor(1, db, escritor1Status, scientist1, escritorIcon1, pesquisarSlider1, publicarSlider1, botaoPause6),
+      new Escritor(2, db, escritor2Status, scientist2, escritorIcon2, pesquisarSlider2, publicarSlider2, botaoPause7),
+      new Escritor(3, db, escritor3Status, scientist3, escritorIcon3, pesquisarSlider3, publicarSlider3, botaoPause8),
+      new Escritor(4, db, escritor4Status, scientist4, escritorIcon4, pesquisarSlider4, publicarSlider4, botaoPause9),
+      new Escritor(5, db, escritor5Status, scientist5, escritorIcon5, pesquisarSlider5, publicarSlider5, botaoPause10)
     );
 
     // 3. Salvando os leitores e escritores da execucao atual
@@ -107,6 +114,11 @@ public class SimuladorController {
   private void reset(){
     pararSimulacao();
     iniciarSimulacao();
+  }
+
+  @FXML
+  public void pausarLeitor(){
+    
   }
 
   @FXML
