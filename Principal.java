@@ -1,8 +1,8 @@
 /* ***************************************************************
 * Autor............: Fernando Nardes Ferreira Neto
 * Matricula........: 202410403
-* Inicio...........: 06/06/2025
-* Ultima alteracao.: 06/06/2025
+* Inicio...........: 09/06/2025
+* Ultima alteracao.: 17/06/2025
 * Nome.............: Principal.java
 * Funcao...........: Classe principal que inicializa a aplicacao com as 
 *                    bibliotecas necessarias para a execucao do JavaFX. 
@@ -37,6 +37,7 @@ public class Principal extends Application {
 
     Image icon = new Image(getClass().getResourceAsStream("./assets/icon.jpg")); // Define o icone do Stage
     primaryStage.getIcons().add(icon); // Adiciona o icone ao Stage
+    
 
     primaryStage.setScene(scene); // Define a cena no Stage
     primaryStage.setTitle("LeitorEscritor"); // Define o titulo do Stage

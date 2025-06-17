@@ -1,0 +1,100 @@
+/* ***************************************************************
+* Autor............: Fernando Nardes Ferreira Neto
+* Matricula........: 202410403
+* Inicio...........: 09/06/2025
+* Ultima alteracao.: 16/06/2025
+* Nome.............: styles.css
+* Funcao...........: Arquivo CSS que controla certos efeitos visuais da interface, como estilizacao de sliders, textos, etc.
+*************************************************************** */
+
+/* O .root é o painel principal. Define o fundo e a fonte padrão. */
+.root {
+    -fx-background-color: #f5f5dc; /* Cor de pergaminho/bege */
+    -fx-font-family: "Georgia", serif; /* Uma fonte clássica com serifa */
+}
+
+/* Estilo padrão para todos os Labels */
+.label {
+    -fx-text-fill: #4a2a2a; /* Marrom escuro para o texto, mais suave que preto */
+    -fx-font-size: 13px;
+}
+
+/* Estilo para os títulos das seções (Cientistas, Estudantes) */
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5C4033; /* Um tom de madeira escura */
+}
+
+/* Estilo para o status principal da biblioteca */
+.biblioteca-status {
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+    -fx-text-fill: #8B4513; /* "SaddleBrown", um marrom rico */
+}
+
+/* Estilo para os painéis que contêm os personagens */
+.container-panel {
+    -fx-background-color: #E8D5B5; /* Um tom de madeira clara para o fundo do painel */
+    -fx-background-radius: 5;
+    -fx-border-color: #5C4033;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5;
+    -fx-padding: 10px;
+}
+
+/* --- ESTILIZAÇÃO DO SLIDER --- */
+
+/* O trilho agora parece um sulco na madeira */
+.slider .track {
+    -fx-background-color: #411b00; /* Fundo do sulco */
+    -fx-background-insets: 0 0 -1 0;
+    -fx-background-radius: 5;
+    -fx-padding: 4px;
+    /* Sombra interna para dar profundidade */
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 2);
+}
+
+/* O polegar agora parece uma peça de latão polido */
+.slider .thumb {
+    -fx-padding: 8px;
+    /* Gradiente radial para simular metal brilhante */
+    -fx-background-color: 
+        radial-gradient(center 25% 25%, radius 100%, #000000, #534941); /* Dourado/Latão */
+    -fx-background-radius: 50%; /* Deixa o polegar redondo */
+    -fx-border-color: #b8860b; /* Borda dourada escura */
+    -fx-border-width: 1px;
+    -fx-border-radius: 50%;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 1, 1);
+}
+
+.slider .thumb:hover {
+    -fx-background-color: 
+        radial-gradient(center 25% 25%, radius 100%, #fffacd, #573218); /* Mais brilhante */
+    -fx-cursor: hand;
+}
+
+/* --- ESTILIZAÇÃO DO BOTÃO --- */
+
+/* Botão com aparência de madeira */
+.button {
+    -fx-background-color: 
+        linear-gradient(from 0% 0% to 100% 100%, #A0522D, #1f0d00); /* Gradiente de madeira (Sienna) */
+    -fx-background-radius: 5;
+    -fx-border-color: #5C4033;
+    -fx-border-radius: 5;
+    -fx-border-width: 1px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 2, 2);
+}
+
+.button:hover {
+    -fx-background-color: 
+        linear-gradient(from 0% 0% to 100% 100%, #B8860B, #1f0d00);
+    -fx-cursor: hand;
+}
+
+.button:pressed {
+    -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.6), 10, 0, 0, 3); /* Efeito de afundar */
+}

@@ -134,7 +134,7 @@
             <Image url="@../assets/block_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="leitorIcon3" fitHeight="77.0" fitWidth="77.0" layoutX="423.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="leitorIcon3" fitHeight="77.0" fitWidth="77.0" layoutX="423.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/block_icon.png" />
          </image>
@@ -161,7 +161,7 @@
       </ImageView>
       <FlowPane fx:id="studentGrid" layoutX="7.0" layoutY="135.0" prefHeight="139.0" prefWidth="908.0">
          <children>
-            <StackPane prefHeight="150.0" prefWidth="180.0">
+            <StackPane prefHeight="150.0" prefWidth="180.0" stylesheets="@styles.css">
                <children>
                   <ImageView fx:id="student1" fitHeight="128.0" fitWidth="128.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -173,12 +173,12 @@
                         <Image url="@../assets/pause_button.png" />
                      </image>
                   </ImageView>
-                  <Slider fx:id="lerSlider1" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="lerSlider1" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
                      </StackPane.margin>
                   </Slider>
-                  <Slider fx:id="procurarSlider1" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" snapToTicks="true" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="procurarSlider1" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" snapToTicks="true" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </StackPane.margin>
@@ -197,12 +197,12 @@
                         <Image url="@../assets/pause_button.png" />
                      </image>
                   </ImageView>
-                  <Slider fx:id="procurarSlider2" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="procurarSlider2" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </StackPane.margin>
                   </Slider>
-                  <Slider fx:id="lerSlider2" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="lerSlider2" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
                      </StackPane.margin>
@@ -221,12 +221,12 @@
                         <Image url="@../assets/pause_button.png" />
                      </image>
                   </ImageView>
-                  <Slider fx:id="procurarSlider3" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="procurarSlider3" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
                      </StackPane.margin>
                   </Slider>
-                  <Slider fx:id="lerSlider3" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="lerSlider3" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </StackPane.margin>
@@ -240,12 +240,12 @@
                         <Image url="@../assets/pause_button.png" />
                      </image>
                   </ImageView>
-                  <Slider fx:id="lerSlider4" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="0.0" rotate="180.0" value="5.0" StackPane.alignment="TOP_LEFT">
+                  <Slider fx:id="lerSlider4" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="0.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="TOP_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
                      </StackPane.margin>
                   </Slider>
-                  <Slider fx:id="procurarSlider4" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="134.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="procurarSlider4" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="134.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </StackPane.margin>
@@ -264,12 +264,12 @@
                         <Image url="@../assets/pause_button.png" />
                      </image>
                   </ImageView>
-                  <Slider fx:id="procurarSlider5" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="procurarSlider5" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </StackPane.margin>
                   </Slider>
-                  <Slider fx:id="lerSlider5" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="lerSlider5" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
                      </StackPane.margin>
@@ -287,7 +287,7 @@
          <children>
             <StackPane prefHeight="150.0" prefWidth="180.0">
                <children>
-                  <ImageView fx:id="scientist1" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="scientist1" fitHeight="128.0" fitWidth="128.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/scientist_idle.gif" />
                      </image>
@@ -297,12 +297,12 @@
                         <Image url="@../assets/pause_button.png" />
                      </image>
                   </ImageView>
-                  <Slider fx:id="publicarSlider1" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="publicarSlider1" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
                      </StackPane.margin>
                   </Slider>
-                  <Slider fx:id="pesquisarSlider1" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="pesquisarSlider1" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </StackPane.margin>
@@ -311,7 +311,7 @@
             </StackPane>
             <StackPane layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="180.0">
                <children>
-                  <ImageView fx:id="scientist2" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="scientist2" fitHeight="128.0" fitWidth="128.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/scientist_idle.gif" />
                      </image>
@@ -321,12 +321,12 @@
                         <Image url="@../assets/pause_button.png" />
                      </image>
                   </ImageView>
-                  <Slider fx:id="publicarSlider2" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="publicarSlider2" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
                      </StackPane.margin>
                   </Slider>
-                  <Slider fx:id="pesquisarSlider2" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="pesquisarSlider2" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </StackPane.margin>
@@ -335,7 +335,7 @@
             </StackPane>
             <StackPane layoutX="190.0" layoutY="10.0" prefHeight="150.0" prefWidth="180.0">
                <children>
-                  <ImageView fx:id="scientist3" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="scientist3" fitHeight="128.0" fitWidth="128.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/scientist_idle.gif" />
                      </image>
@@ -345,12 +345,12 @@
                         <Image url="@../assets/pause_button.png" />
                      </image>
                   </ImageView>
-                  <Slider fx:id="publicarSlider3" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="publicarSlider3" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
                      </StackPane.margin>
                   </Slider>
-                  <Slider fx:id="pesquisarSlider3" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="pesquisarSlider3" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </StackPane.margin>
@@ -359,7 +359,7 @@
             </StackPane>
             <StackPane layoutX="370.0" layoutY="10.0" prefHeight="150.0" prefWidth="180.0">
                <children>
-                  <ImageView fx:id="scientist4" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="scientist4" fitHeight="128.0" fitWidth="128.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/scientist_idle.gif" />
                      </image>
@@ -369,12 +369,12 @@
                         <Image url="@../assets/pause_button.png" />
                      </image>
                   </ImageView>
-                  <Slider fx:id="publicarSlider4" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="publicarSlider4" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
                      </StackPane.margin>
                   </Slider>
-                  <Slider fx:id="pesquisarSlider4" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="pesquisarSlider4" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </StackPane.margin>
@@ -388,17 +388,17 @@
                         <Image url="@../assets/pause_button.png" />
                      </image>
                   </ImageView>
-                  <Slider fx:id="publicarSlider5" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="publicarSlider5" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
                      </StackPane.margin>
                   </Slider>
-                  <Slider fx:id="pesquisarSlider5" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" value="5.0" StackPane.alignment="CENTER_LEFT">
+                  <Slider fx:id="pesquisarSlider5" max="10.0" min="1.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="14.0" rotate="180.0" stylesheets="@styles.css" value="5.0" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </StackPane.margin>
                   </Slider>
-                  <ImageView fx:id="scientist5" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="scientist5" fitHeight="128.0" fitWidth="128.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/scientist_idle.gif" />
                      </image>

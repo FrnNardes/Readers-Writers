@@ -1,3 +1,15 @@
+/* ***************************************************************
+* Autor............: Fernando Nardes Ferreira Neto
+* Matricula........: 202410403
+* Inicio...........: 09/06/2025
+* Ultima alteracao.: 16/06/2025
+* Nome.............: SimuladorController.java
+* Funcao...........: Classe controladora principal da aplicacao. Ela gerencia
+*                    a interface grafica definida no 'simulacao.fxml',
+*                    orquestra a criacao e o ciclo de vida das threads de
+*                    Leitores e Escritores, e lida com os eventos de
+*                    interacao do usuario, como reset e pausa.
+*************************************************************** */
 package controller;
 
 import util.Contador;
@@ -18,6 +30,7 @@ import java.util.concurrent.Semaphore;
 
 public class SimuladorController {
 
+  // Variaveis injetadas pelo FXML para todos os componentes da interface
   @FXML private FlowPane studentGrid;
 
   // Injeção dos componentes da View
@@ -34,21 +47,34 @@ public class SimuladorController {
   @FXML private Slider publicarSlider1, publicarSlider2, publicarSlider3, publicarSlider4, publicarSlider5;
   @FXML private ImageView botaoPause1, botaoPause2, botaoPause3, botaoPause4, botaoPause5, botaoPause6, botaoPause7, botaoPause8, botaoPause9, botaoPause10;
 
-  private final Image pause_button = new Image(getClass().getResourceAsStream("/assets/pause_button.png")); // Pega a imagem do botao cinza
-  private final Image play_button = new Image(getClass().getResourceAsStream("/assets/play_button.png")); // Pega a imagem do botao cinza
+  // Carrega as imagens dos botoes de pausa/play uma unica vez para otimizacao
+  private final Image pause_button = new Image(getClass().getResourceAsStream("/assets/pause_button.png"));
+  private final Image play_button = new Image(getClass().getResourceAsStream("/assets/play_button.png"));
 
-  // Campos para gerenciar a simulação
+  // Listas para armazenar as threads ativas, permitindo para-las durante o reset
   private List<Leitor> leitoresAtivos = new ArrayList<>();
   private List<Escritor> escritoresAtivos = new ArrayList<>();
 
+  /* ***************************************************************
+  * Metodo: iniciarSimulacao
+  * Funcao: Configura e inicia uma nova instancia da simulacao. Cria os
+  * semaforos, agrupa os componentes da UI em listas e instancia
+  * as threads de Leitores e Escritores, configurando seus
+  * respectivos botoes de pausa e iniciando sua execucao.
+  * Parametros: Nenhum
+  * Retorno: void
+  *************************************************************** */
   private void iniciarSimulacao(){
-    // 1. Cria a lógica e os dados do Model
-    Semaphore mutex = new Semaphore(1);
-    Semaphore db = new Semaphore(1);
-    Contador rc = new Contador();
+    // Limpa as listas da simulacao anterior para evitar IllegalThreadStateException
+    leitoresAtivos.clear();
+    escritoresAtivos.clear();
 
-    // 2. Cria as instâncias dos Atores (Model)
-    // (Vou remover a passagem do botão de pausa do construtor, pois vamos configurá-lo aqui)
+    // 1. Cria os objetos de sincronizacao do problema Leitor/Escritor
+    Semaphore mutex = new Semaphore(1); // Para proteger o contador 'rc'
+    Semaphore db = new Semaphore(1);    // Para garantir acesso exclusivo dos escritores ao 'banco de dados'
+    Contador rc = new Contador();       // Conta o numero de leitores ativos
+
+    // 2. Agrupa os componentes FXML em listas para facilitar a manipulacao em loops
     List<Leitor> leitores = Arrays.asList(
         new Leitor(1, mutex, db, rc, leitor1Status, student1, leitorIcon1, procurarSlider1, lerSlider1),
         new Leitor(2, mutex, db, rc, leitor2Status, student2, leitorIcon2, procurarSlider2, lerSlider2),
@@ -64,21 +90,21 @@ public class SimuladorController {
         new Escritor(4, db, escritor4Status, scientist4, escritorIcon4, pesquisarSlider4, publicarSlider4),
         new Escritor(5, db, escritor5Status, scientist5, escritorIcon5, pesquisarSlider5, publicarSlider5)
     );
-
-    // --- A CONEXÃO DOS BOTÕES ACONTECE AQUI ---
     
-    // Agrupa os botões em uma lista para facilitar
+    // Agrupa os botoes de pausa em uma lista unica para facilitar a atribuicao
     List<ImageView> botoesPausa = Arrays.asList(botaoPause1, botaoPause2, botaoPause3, botaoPause4, botaoPause5, botaoPause6, botaoPause7, botaoPause8, botaoPause9, botaoPause10);
 
-    // Conecta os 5 primeiros botões aos 5 leitores
+    // Conecta os 5 primeiros botoes aos 5 leitores
     for (int i = 0; i < leitores.size(); i++) {
-        final Leitor leitor = leitores.get(i); // Variável final para ser usada na lambda
+        final Leitor leitor = leitores.get(i); // Variavel precisa ser final para ser usada na expressao lambda
         ImageView botao = botoesPausa.get(i);
-        botao.setImage(pause_button);
-        aplicarAnimacaoBotao(botoesPausa.get(i));
+        botao.setImage(pause_button); // Define a imagem inicial como 'pausa'
+        aplicarAnimacaoBotao(botao);
         
+        // Define a acao de clique para o botao de pausa
         botao.setOnMouseClicked(event -> {
-            leitor.alternarPausa();
+            leitor.alternarPausa(); // Chama o metodo de pausa da thread correspondente
+            // Alterna a imagem do botao entre 'play' e 'pause'
             if(leitor.isPaused()){
               botao.setImage(play_button);
             } else{
@@ -87,30 +113,28 @@ public class SimuladorController {
         });
     }
 
-    // Conecta os 5 últimos botões aos 5 escritores
+    // Conecta os 5 ultimos botoes aos 5 escritores
     for (int i = 0; i < escritores.size(); i++) {
-      final Escritor escritor = escritores.get(i);
-      ImageView botao = botoesPausa.get(i + 5); // Começa do índice 5 da lista de botões
-      botao.setImage(pause_button);
-      aplicarAnimacaoBotao(botoesPausa.get(i + 5));
+        final Escritor escritor = escritores.get(i);
+        ImageView botao = botoesPausa.get(i + 5); // Comeca do indice 5 da lista de botoes
+        botao.setImage(pause_button);
+        aplicarAnimacaoBotao(botao);
 
-      botao.setOnMouseClicked(event -> {
-        escritor.alternarPausa();
-        if(escritor.isPaused()){
-          botao.setImage(play_button);
-        } else{
-          botao.setImage(pause_button);
-        }
-      });
+        botao.setOnMouseClicked(event -> {
+            escritor.alternarPausa();
+            if(escritor.isPaused()){
+              botao.setImage(play_button);
+            } else{
+              botao.setImage(pause_button);
+            }
+        });
     }
 
-    // --- FIM DA CONEXÃO ---
-
-    // 3. Salvando os leitores e escritores da execucao atual
+    // 3. Adiciona as novas threads às listas de controle
     leitoresAtivos.addAll(leitores);
     escritoresAtivos.addAll(escritores);
 
-    // 4. Iniciando simualcao
+    // 4. Inicia a execucao de todas as threads
     for(Leitor leitor : leitoresAtivos){
       leitor.start();
     }
@@ -119,6 +143,14 @@ public class SimuladorController {
     }
   }
 
+  /* ***************************************************************
+  * Metodo: pararSimulacao
+  * Funcao: Interrompe de forma segura todas as threads que estao
+  * em execucao, chamando o metodo 'parar()' de cada uma e,
+  * em seguida, limpa as listas de controle.
+  * Parametros: Nenhum
+  * Retorno: void
+  *************************************************************** */
   private void pararSimulacao(){
     for(Leitor leitor : leitoresAtivos){
       leitor.parar();
@@ -130,35 +162,62 @@ public class SimuladorController {
     escritoresAtivos.clear();
   }
 
+  /* ***************************************************************
+  * Metodo: aplicarAnimacaoBotao
+  * Funcao: Adiciona efeitos visuais de hover e clique a um conjunto
+  * de ImageViews para que se comportem como botoes.
+  * Parametros: ImageViews - um array de uma ou mais ImageViews.
+  * Retorno: void
+  *************************************************************** */
   public void aplicarAnimacaoBotao(ImageView... ImageViews) {
     ColorAdjust efeitoHover = new ColorAdjust();
+    efeitoHover.setBrightness(0.4); 
     ColorAdjust efeitoPressionado = new ColorAdjust();
-
-    efeitoHover.setBrightness(0.4); // Clareia a imagem ao passar o mouse
-    efeitoPressionado.setBrightness(-0.4); // Escurece a imagem ao pressionar
+    efeitoPressionado.setBrightness(-0.4);
 
     for(ImageView imageView : ImageViews){
-      imageView.setOnMouseEntered(e -> imageView.setEffect(efeitoHover)); // Evento de hover (mouse entra na imagem
-      imageView.setOnMouseExited(e -> imageView.setEffect(null)); // Evento de saída do hover (mouse sai da imagem)
-      imageView.setOnMousePressed(e -> imageView.setEffect(efeitoPressionado)); // Evento de clique pressionado
-      imageView.setOnMouseReleased(e -> imageView.setEffect(efeitoHover)); // Evento de clique liberado
+      imageView.setOnMouseEntered(e -> imageView.setEffect(efeitoHover)); 
+      imageView.setOnMouseExited(e -> imageView.setEffect(null));
+      imageView.setOnMousePressed(e -> imageView.setEffect(efeitoPressionado));
+      imageView.setOnMouseReleased(e -> imageView.setEffect(efeitoHover));
     }// Fim do For
   }// Fim do metodo aplicarAnimacaoBotao
 
+  /* ***************************************************************
+  * Metodo: fechar
+  * Funcao: Metodo acionado pelo botao de fechar. Encerra a aplicacao.
+  * Parametros: Nenhum
+  * Retorno: void
+  *************************************************************** */
   @FXML
   private void fechar(){
     System.exit(0);
   }
 
+  /* ***************************************************************
+  * Metodo: reset
+  * Funcao: Metodo acionado pelo botao de reset. Para a simulacao
+  * atual e inicia uma nova em seguida.
+  * Parametros: Nenhum
+  * Retorno: void
+  *************************************************************** */
   @FXML
   private void reset(){
     pararSimulacao();
     iniciarSimulacao();
   }
 
+  /* ***************************************************************
+  * Metodo: initialize
+  * Funcao: Metodo padrao do JavaFX chamado automaticamente apos o FXML
+  * ser carregado. É o ponto de entrada para configurar o
+  * controller, iniciando a simulacao e as animacoes dos botoes.
+  * Parametros: Nenhum
+  * Retorno: void
+  *************************************************************** */
   @FXML
   public void initialize() {
     iniciarSimulacao();
     aplicarAnimacaoBotao(botaoReset, botaoFechar);
   }
-}
+} // Fim da classe SimuladorController
