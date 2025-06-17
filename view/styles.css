@@ -47,7 +47,8 @@
 
 /* O trilho agora parece um sulco na madeira */
 .slider .track {
-    -fx-background-color: #411b00; /* Fundo do sulco */
+    -fx-background-color: 
+        radial-gradient(center 25% 25%, radius 100%, #000000, #5f3314); /* Dourado/Latão */
     -fx-background-insets: 0 0 -1 0;
     -fx-background-radius: 5;
     -fx-padding: 4px;
@@ -60,7 +61,7 @@
     -fx-padding: 8px;
     /* Gradiente radial para simular metal brilhante */
     -fx-background-color: 
-        radial-gradient(center 25% 25%, radius 100%, #000000, #534941); /* Dourado/Latão */
+        radial-gradient(center 25% 25%, radius 100%, #000000, #797979); /* Dourado/Latão */
     -fx-background-radius: 50%; /* Deixa o polegar redondo */
     -fx-border-color: #b8860b; /* Borda dourada escura */
     -fx-border-width: 1px;

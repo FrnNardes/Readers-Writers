@@ -82,7 +82,7 @@ public class Leitor extends Ator {
         mutex.release(); // Libera o acesso ao contador
 
         // Acesso à base de dados (leitura)
-        slicedSleep((long) (1000 * slider2.getValue()), student_static, "PROCURANDO...", student_thinking);
+        slicedSleep((long) (1000 * slider1.getValue()), student_static, "PROCURANDO...", student_thinking);
 
         // Saindo da seção crítica
         mutex.acquire(); // Bloqueia novamente para decrementar
@@ -93,7 +93,7 @@ public class Leitor extends Ator {
         mutex.release(); // Libera o acesso ao contador
 
         // Utilização do dado lido (simboliza leitura do livro)
-        slicedSleep((long) (1000 * slider1.getValue()), student_static, "LENDO LIVRO...", student_reading);
+        slicedSleep((long) (1000 * slider2.getValue()), student_static, "LENDO LIVRO...", student_reading);
       }
 
     } catch (InterruptedException e) {
