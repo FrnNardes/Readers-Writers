@@ -13,153 +13,153 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: dddddd;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SimuladorController">
    <children>
-      <ImageView blendMode="SRC_ATOP" fitHeight="805.0" fitWidth="1127.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView blendMode="SRC_ATOP" fitHeight="709.0" fitWidth="1062.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/background2.png" />
+            <Image url="@../assets/background.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="390.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/dialog_box-removebg-preview.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="569.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="388.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/dialog_box-removebg-preview.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="746.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="568.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/dialog_box-removebg-preview.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="211.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="747.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/dialog_box-removebg-preview.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="31.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="205.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/dialog_box-removebg-preview.png" />
          </image>
       </ImageView>
-      <Label fx:id="leitor3Status" alignment="CENTER" layoutX="397.0" layoutY="25.0" prefWidth="128.0" text="3">
+      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="29.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/dialog_box-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="leitor3Status" alignment="CENTER" layoutX="397.0" layoutY="113.0" prefWidth="128.0" text="3">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="leitor1Status" alignment="CENTER" layoutX="40.0" layoutY="25.0" prefWidth="128.0" text="1">
+      <Label fx:id="leitor1Status" alignment="CENTER" layoutX="38.0" layoutY="113.0" prefWidth="128.0" text="1">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="leitor2Status" alignment="CENTER" layoutX="220.0" layoutY="25.0" prefWidth="128.0" text="2">
+      <Label fx:id="leitor2Status" alignment="CENTER" layoutX="214.0" layoutY="113.0" prefWidth="128.0" text="2">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="leitor5Status" alignment="CENTER" layoutX="755.0" layoutY="25.0" prefWidth="128.0" text="5" visible="false">
+      <Label fx:id="leitor5Status" alignment="CENTER" layoutX="757.0" layoutY="113.0" prefWidth="128.0" text="5" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="leitor4Status" alignment="CENTER" layoutX="577.0" layoutY="25.0" prefWidth="128.0" text="4">
+      <Label fx:id="leitor4Status" alignment="CENTER" layoutX="578.0" layoutY="113.0" prefWidth="128.0" text="4">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="31.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="29.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/dialog_box-removebg-preview.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="570.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="84.0" fitWidth="147.0" layoutX="571.0" layoutY="453.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/dialog_box-removebg-preview.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="392.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="391.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/dialog_box-removebg-preview.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="214.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="205.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/dialog_box-removebg-preview.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="747.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="85.0" fitWidth="147.0" layoutX="746.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/dialog_box-removebg-preview.png" />
          </image>
       </ImageView>
-      <Label fx:id="escritor5Status" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="755.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="5" textAlignment="CENTER" textOverrun="CLIP">
+      <Label fx:id="escritor5Status" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="756.0" layoutY="485.0" prefHeight="17.0" prefWidth="128.0" text="5" textAlignment="CENTER" textOverrun="CLIP">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="escritor3Status" alignment="CENTER" layoutX="400.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="3" textAlignment="CENTER">
+      <Label fx:id="escritor3Status" alignment="CENTER" layoutX="401.0" layoutY="485.0" prefHeight="17.0" prefWidth="128.0" text="3" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="escritor4Status" alignment="CENTER" layoutX="577.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="4" textAlignment="CENTER">
+      <Label fx:id="escritor4Status" alignment="CENTER" layoutX="580.0" layoutY="485.0" prefHeight="17.0" prefWidth="128.0" text="4" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="escritor2Status" alignment="CENTER" layoutX="223.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="2" textAlignment="CENTER">
+      <Label fx:id="escritor2Status" alignment="CENTER" layoutX="214.0" layoutY="485.0" prefHeight="17.0" prefWidth="128.0" text="2" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="escritor1Status" alignment="CENTER" layoutX="38.0" layoutY="525.0" prefHeight="17.0" prefWidth="128.0" text="1" textAlignment="CENTER">
+      <Label fx:id="escritor1Status" alignment="CENTER" layoutX="38.0" layoutY="485.0" prefHeight="17.0" prefWidth="128.0" text="1" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ImageView fx:id="escritorIcon3" fitHeight="77.0" fitWidth="77.0" layoutX="425.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="escritorIcon3" fitHeight="77.0" fitWidth="77.0" layoutX="426.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/block_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="escritorIcon2" fitHeight="77.0" fitWidth="108.0" layoutX="249.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="escritorIcon2" fitHeight="77.0" fitWidth="108.0" layoutX="240.0" layoutY="457.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/block_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="escritorIcon4" fitHeight="84.0" fitWidth="77.0" layoutX="603.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="escritorIcon4" fitHeight="84.0" fitWidth="77.0" layoutX="606.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/block_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="escritorIcon5" fitHeight="77.0" fitWidth="83.0" layoutX="781.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="escritorIcon5" fitHeight="77.0" fitWidth="83.0" layoutX="782.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/block_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="leitorIcon2" fitHeight="77.0" fitWidth="77.0" layoutX="246.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="leitorIcon2" fitHeight="77.0" fitWidth="77.0" layoutX="240.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/block_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="leitorIcon3" fitHeight="77.0" fitWidth="77.0" layoutX="423.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="leitorIcon3" fitHeight="77.0" fitWidth="77.0" layoutX="423.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/block_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="leitorIcon1" fitHeight="77.0" fitWidth="77.0" layoutX="66.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="leitorIcon1" fitHeight="77.0" fitWidth="77.0" layoutX="64.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/block_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="leitorIcon5" fitHeight="84.0" fitWidth="77.0" layoutX="781.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="leitorIcon5" fitHeight="84.0" fitWidth="77.0" layoutX="782.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/block_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="leitorIcon4" fitHeight="77.0" fitWidth="77.0" layoutX="603.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="leitorIcon4" fitHeight="77.0" fitWidth="77.0" layoutX="603.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/block_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="escritorIcon1" fitHeight="77.0" fitWidth="101.0" layoutX="64.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="escritorIcon1" fitHeight="77.0" fitWidth="101.0" layoutX="64.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/block_icon.png" />
          </image>
       </ImageView>
-      <FlowPane fx:id="studentGrid" layoutX="10.0" layoutY="52.0" prefHeight="139.0" prefWidth="908.0">
+      <FlowPane fx:id="studentGrid" layoutX="7.0" layoutY="135.0" prefHeight="139.0" prefWidth="908.0">
          <children>
             <StackPane prefHeight="150.0" prefWidth="180.0">
                <children>
@@ -283,7 +283,7 @@
             </StackPane>
          </children>
       </FlowPane>
-      <FlowPane layoutX="10.0" layoutY="549.0" prefHeight="140.0" prefWidth="908.0">
+      <FlowPane layoutX="11.0" layoutY="509.0" prefHeight="140.0" prefWidth="908.0">
          <children>
             <StackPane prefHeight="150.0" prefWidth="180.0">
                <children>
@@ -383,11 +383,6 @@
             </StackPane>
             <StackPane layoutX="550.0" layoutY="10.0" prefHeight="150.0" prefWidth="180.0">
                <children>
-                  <ImageView fx:id="scientist5" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/scientist_idle.gif" />
-                     </image>
-                  </ImageView>
                   <ImageView fx:id="botaoPause10" fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
                      <image>
                         <Image url="@../assets/pause_button.png" />
@@ -403,11 +398,16 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </StackPane.margin>
                   </Slider>
+                  <ImageView fx:id="scientist5" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/scientist_idle.gif" />
+                     </image>
+                  </ImageView>
                </children>
             </StackPane>
          </children>
       </FlowPane>
-      <VBox alignment="CENTER" layoutX="918.0" prefHeight="700.0" prefWidth="80.0">
+      <VBox alignment="CENTER" layoutX="920.0" prefHeight="700.0" prefWidth="80.0" style="-fx-background-color: GREY; -fx-border-color: #2e1c0a; -fx-border-width: 2;">
          <children>
             <StackPane prefHeight="75.0" prefWidth="80.0">
                <children>

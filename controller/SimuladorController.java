@@ -92,7 +92,7 @@ public class SimuladorController {
       final Escritor escritor = escritores.get(i);
       ImageView botao = botoesPausa.get(i + 5); // Começa do índice 5 da lista de botões
       botao.setImage(pause_button);
-      aplicarAnimacaoBotao(botoesPausa.get(i));
+      aplicarAnimacaoBotao(botoesPausa.get(i + 5));
 
       botao.setOnMouseClicked(event -> {
         escritor.alternarPausa();
